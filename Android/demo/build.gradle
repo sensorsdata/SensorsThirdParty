@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+//添加 com.sensorsdata.analytics.android 插件
+apply plugin: 'com.sensorsdata.analytics.android'
+
+android {
+    compileSdkVersion rootProject.ext.buildConfig.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.sensorsdata.sdk.demo"
+        minSdkVersion rootProject.ext.buildConfig.minSdkVersion
+        targetSdkVersion rootProject.ext.buildConfig.targetSdkVersion
+        versionCode rootProject.ext.buildConfig.versionCode
+        versionName rootProject.ext.buildConfig.versionName
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+//    sensorsAnalytics {
+//        debug = true
+//    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['.jar', '.so'], dir: 'libs')
+    implementation rootProject.ext.androidx.appcompat
+    implementation rootProject.ext.androidx.google_material
+    implementation rootProject.ext.androidx.constraintlayout
+    implementation('com.sensorsdata.analytics.android:SensorsAnalyticsSDK:6.6.3')
+    implementation 'com.appsflyer:af-android-sdk:6.9.4'
+    implementation "com.android.installreferrer:installreferrer:2.2"
+    implementation project(":module_thirdParty")
+}

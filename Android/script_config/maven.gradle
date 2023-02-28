@@ -1,0 +1,88 @@
+apply plugin: 'signing'
+apply plugin: 'maven-publish'
+
+task sourceJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    dependsOn 'assembleRelease'
+    source = android.sourceSets.main.java.srcDirs +
+            'build/generated/not_namespaced_r_class_sources/release/generateReleaseRFile/out/com/sensorsdata/analytics/android/sdk/R.java'
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+javadoc {
+    options {
+        encoding "UTF-8"
+        charSet 'UTF-8'
+    }
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+def groupId_maven = 'com.sensorsdata.analytics.android'
+def artifactId_maven = "ThirdParty"
+version = rootProject.ext.versions.thirdParty_version
+
+publishing {
+    publications {
+        mavenAndroid(MavenPublication) {
+            groupId = groupId_maven
+            artifactId = artifactId_maven
+            version = version
+            artifact sourceJar
+            artifact javadocJar
+            artifact("build/outputs/aar/${rootProject.ext.text.pojectName}-${version}.aar")
+            // 配置 pop 文件格式
+            pom {
+                packaging 'aar'
+                name = 'The official ThirdParty Data for Sensors Analytics.'
+                description = 'he official ThirdParty Data for Sensors Analytics.'
+                url = 'he official ThirdParty Data for Sensors Analytics.'
+                licenses {
+                    license {
+                        name = 'The Apache Software License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'dengshiwei'
+                        name = 'dengshiwei'
+                        email = 'dengshiwei@sensorsdata.com'
+                    }
+                }
+                scm {
+                    connection = 'https://github.com/sensorsdata/SensorsThirdParty'
+                    developerConnection = 'https://github.com/SensorsThirdParty.git'
+                    url = 'https://github.com/sensorsdata/SensorsThirdParty'
+                }
+            }
+        }
+    }
+    // 配置远程仓库
+    repositories {
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file('local.properties').newDataInputStream())
+        def mavenUser = properties.getProperty("maven.user")
+        def mavenPassword = properties.getProperty("maven.password")
+        maven {
+            url = 'https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/'
+//            url = '../repo'
+            credentials {
+                username mavenUser
+                password mavenPassword
+            }
+        }
+    }
+}
+
+// 对 mavenAndroid 发布内容进行签名
+signing {
+    sign publishing.publications.mavenAndroid
+}
