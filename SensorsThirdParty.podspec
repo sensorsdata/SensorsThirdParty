@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.dependency 'SensorsAnalyticsSDK'
   s.default_subspec = 'Core'
 
-  base_dir = 'SensorsThirdParty/SensorsThirdParty/'
+  base_dir = 'iOS/SensorsThirdParty/SensorsThirdParty/'
 
   s.subspec 'Core' do |c|
     s.static_framework = true
