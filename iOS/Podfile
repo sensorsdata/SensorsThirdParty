@@ -9,7 +9,6 @@ target 'Example' do
 
   # Pods for Example
   
-  pod 'SensorsThirdParty/Dynamic', :path => './'
-  pod 'AppsFlyerFramework/Dynamic'
+  pod 'SensorsThirdParty/AppsFlyer', :path => '../'
 
 end

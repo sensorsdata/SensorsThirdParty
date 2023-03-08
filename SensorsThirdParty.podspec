@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'SensorsThirdParty'
-  s.version = '0.0.1'
+  s.version = '0.0.2'
   s.summary = 'The official iOS SDK of Sensors ThirdParty.'
   s.homepage = 'http://www.sensorsdata.cn'
   s.license = { :type => 'Apache 2.0', :file => 'LICENSE' }
@@ -15,14 +15,20 @@ Pod::Spec.new do |s|
   base_dir = 'iOS/SensorsThirdParty/SensorsThirdParty/'
 
   s.subspec 'Core' do |c|
-    s.static_framework = true
-    c.dependency 'AppsFlyerFramework', '>=6.9.2'
-    c.source_files = base_dir + 'Source/**/*.{h,m}'
+    c.source_files = base_dir + 'Source/Core/*.{h,m}', base_dir + 'Source/include/*.{h,m}',
     c.public_header_files = base_dir + 'Source/include/*.h'
   end
-  s.subspec 'Dynamic' do |b|
-    b.dependency 'AppsFlyerFramework/Dynamic', '>=6.9.2'
-    b.source_files = base_dir + 'Source/**/*.{h,m}'
-    b.public_header_files = base_dir + 'Source/include/*.h'
+  s.subspec 'AppsFlyer' do |d|
+    s.static_framework = true
+    d.dependency 'AppsFlyerFramework', '>=6.9.2'
+    d.dependency 'SensorsThirdParty/Core'
+    d.source_files = base_dir + 'Source/AppsFlyer/*.{h,m}'
+    d.project_header_files = base_dir + 'Source/AppsFlyer/*.h'
+  end
+  s.subspec 'AppsFlyerDynamic' do |e|
+    e.dependency 'AppsFlyerFramework/Dynamic', '>=6.9.2'
+    e.dependency 'SensorsThirdParty/Core'
+    e.source_files = base_dir + 'Source/AppsFlyer/*.{h,m}'
+    e.project_header_files = base_dir + 'Source/AppsFlyer/*.h'
   end
 end
