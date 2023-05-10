@@ -25,7 +25,7 @@
 #import "SensorsThirdParty.h"
 #import "SAThirdPartyManager.h"
 
-static const NSString *kSDKVersion = @"0.0.2";
+static const NSString *kSDKVersion = @"0.0.3";
 
 @implementation SensorsThirdParty
 

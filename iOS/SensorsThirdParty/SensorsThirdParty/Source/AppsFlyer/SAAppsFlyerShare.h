@@ -18,7 +18,7 @@
 // limitations under the License.
 //
 
-#import "SAThirdPartyManager.h"
+#import "SAThirdPartyShare.h"
 #import "SAThirdPartyDataShare.h"
 
 NS_ASSUME_NONNULL_BEGIN

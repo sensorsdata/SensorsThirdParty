@@ -5,7 +5,7 @@ ext {
     ]
     versions = [
             // 三方接口模块版本号
-            thirdParty_version: "0.0.1"
+            thirdParty_version: "0.0.3"
     ]
 
     buildConfig = [

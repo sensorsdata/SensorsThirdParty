@@ -31,4 +31,10 @@ Pod::Spec.new do |s|
     e.source_files = base_dir + 'Source/AppsFlyer/*.{h,m}'
     e.project_header_files = base_dir + 'Source/AppsFlyer/*.h'
   end
+  s.subspec 'Adjust' do |f|
+    f.dependency 'Adjust', '>=4.33.4'
+    f.dependency 'SensorsThirdParty/Core'
+    f.source_files = base_dir + 'Source/Adjust/*.{h,m}'
+    f.project_header_files = base_dir + 'Source/Adjust/*.h'
+  end
 end

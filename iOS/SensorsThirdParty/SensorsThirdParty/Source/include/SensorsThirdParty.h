@@ -22,6 +22,7 @@
 
 typedef enum : NSUInteger {
     SAThirdPartyNameAppsFlyer = 10001,
+    SAThirdPartyNameAdjust = 10002,
     SAThirdPartyNameUnknown,
 } SAThirdPartyName;
 

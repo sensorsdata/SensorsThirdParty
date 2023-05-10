@@ -23,15 +23,7 @@
 #endif
 
 #import "SAThirdPartyManager.h"
-#import "SAThirdPartyShare.h"
-
-#if __has_include("SAAppsFlyerShare.h")
 #import "SAAppsFlyerShare.h"
-#endif
-
-#if __has_include("SAAdjustShare.h")
-#import "SAAdjustShare.h"
-#endif
 
 static NSNotificationName const kTrackLoginNotification = @"SensorsAnalyticsTrackLoginNotification";
 static NSNotificationName const kTrackLogoutNotification = @"SensorsAnalyticsTrackLogoutNotification";
@@ -81,14 +73,7 @@ void sensors_third_party_dispatch_safe_sync(dispatch_queue_t queue,DISPATCH_NOES
     }
     switch (name) {
         case SAThirdPartyNameAppsFlyer:
-#if __has_include("SAAppsFlyerShare.h")
             share = [[SAAppsFlyerShare alloc] init];
-#endif
-            break;
-        case SAThirdPartyNameAdjust:
-#if __has_include("SAAdjustShare.h")
-            share = [[SAAdjustShare alloc] init];
-#endif
             break;
         default:
             share = [[SAThirdPartyShare alloc] init];
@@ -102,10 +87,7 @@ void sensors_third_party_dispatch_safe_sync(dispatch_queue_t queue,DISPATCH_NOES
     NSString *rawNameValue = nil;
     switch (thirdPartyName) {
         case SAThirdPartyNameAppsFlyer:
-            rawNameValue = @"SAAppsFlyer";
-            break;
-        case SAThirdPartyNameAdjust:
-            rawNameValue = @"SAAdjust";
+            rawNameValue = @"AppsFlyer";
             break;
         default:
             rawNameValue = @"Unknown";
@@ -134,6 +116,13 @@ void sensors_third_party_dispatch_safe_sync(dispatch_queue_t queue,DISPATCH_NOES
         _thirdPartyShares = [NSMutableDictionary dictionary];
     }
     return _thirdPartyShares;
+}
+
+@end
+
+@implementation SAThirdPartyShare
+
+- (void)shareData:(NSDictionary *)data {
 }
 
 @end

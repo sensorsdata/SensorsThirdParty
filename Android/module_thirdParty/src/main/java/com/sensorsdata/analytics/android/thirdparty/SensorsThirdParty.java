@@ -29,6 +29,11 @@ public class SensorsThirdParty {
 
     private final static Map<String, ISAThirdPartyShare> thirdPartyCacheMaps = new HashMap();
 
+
+    public static void share(SAThirdPartyName thirdPartyName) {
+        share(thirdPartyName, null);
+    }
+
     public static void share(SAThirdPartyName thirdPartyName, Map<String, Object> data) {
         try {
             ISAThirdPartyShare thirdPartyShare;

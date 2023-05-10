@@ -1,5 +1,5 @@
 //
-// SAThirdPartyManager.h
+// SensorsThirdParty.m
 // SensorsThirdParty SDK
 //
 // Created by 陈玉国 on 2023/2/13.
@@ -18,17 +18,17 @@
 // limitations under the License.
 //
 
-#import <Foundation/Foundation.h>
+#if ! __has_feature(objc_arc)
+#error This file must be compiled with ARC. Either turn on ARC for the project or use -fobjc-arc flag on this file.
+#endif
+
 #import "SensorsThirdParty.h"
+#import "SAThirdPartyManager.h"
 
-NS_ASSUME_NONNULL_BEGIN
+@implementation SensorsThirdParty
 
-@interface SAThirdPartyManager : NSObject
-
-+ (instancetype)defaultManager;
-
-- (void)shareData:(NSDictionary *)data toThirdParty:(SAThirdPartyName)thirdParty;
++ (void)shareData:(NSDictionary *)data toThirdParty:(SAThirdPartyName)thirdParty {
+    [[SAThirdPartyManager defaultManager] shareData:data toThirdParty:thirdParty];
+}
 
 @end
-
-NS_ASSUME_NONNULL_END

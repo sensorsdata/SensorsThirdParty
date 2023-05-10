@@ -1,5 +1,5 @@
 //
-// SAThirdPartyManager.h
+// SAThirdPartyDataShare.h
 // SensorsThirdParty SDK
 //
 // Created by 陈玉国 on 2023/2/13.
@@ -19,16 +19,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SensorsThirdParty.h"
 
-NS_ASSUME_NONNULL_BEGIN
+@protocol SAThirdPartyDataShare <NSObject>
 
-@interface SAThirdPartyManager : NSObject
-
-+ (instancetype)defaultManager;
-
-- (void)shareData:(NSDictionary *)data toThirdParty:(SAThirdPartyName)thirdParty;
+- (void)shareData:(NSDictionary *)data;
 
 @end
-
-NS_ASSUME_NONNULL_END

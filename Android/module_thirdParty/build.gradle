@@ -18,6 +18,7 @@
 apply plugin: 'com.android.library'
 apply from: "../script_config/maven.gradle"
 
+tasks.getByPath(":module_thirdParty:javadoc").enabled = false
 android {
     compileSdkVersion rootProject.ext.buildConfig.compileSdkVersion
 
@@ -73,6 +74,7 @@ dependencies {
     testImplementation rootProject.ext.test.powermock_core
     testImplementation 'com.appsflyer:af-android-sdk:6.9.0'
 
-    testImplementation('com.sensorsdata.analytics.android:SensorsAnalyticsSDK:6.6.3')
-    compileOnly('com.sensorsdata.analytics.android:SensorsAnalyticsSDK:6.6.3')
+
+    testImplementation('com.sensorsdata.analytics.android:SensorsAnalyticsSDK:6.6.4')
+    compileOnly('com.sensorsdata.analytics.android:SensorsAnalyticsSDK:6.6.4')
 }

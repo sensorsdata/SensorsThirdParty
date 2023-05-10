@@ -1,5 +1,5 @@
 //
-// SAThirdPartyManager.h
+// SAAppsFlyerShare.h
 // SensorsThirdParty SDK
 //
 // Created by 陈玉国 on 2023/2/13.
@@ -18,16 +18,12 @@
 // limitations under the License.
 //
 
-#import <Foundation/Foundation.h>
-#import "SensorsThirdParty.h"
+#import "SAThirdPartyManager.h"
+#import "SAThirdPartyDataShare.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SAThirdPartyManager : NSObject
-
-+ (instancetype)defaultManager;
-
-- (void)shareData:(NSDictionary *)data toThirdParty:(SAThirdPartyName)thirdParty;
+@interface SAAppsFlyerShare : SAThirdPartyShare <SAThirdPartyDataShare>
 
 @end
 

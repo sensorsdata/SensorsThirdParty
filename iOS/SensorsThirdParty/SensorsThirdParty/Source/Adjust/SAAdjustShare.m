@@ -1,8 +1,8 @@
 //
-// SAAppsFlyerShare.m
+// SAAdjustShare.m
 // SensorsThirdParty SDK
 //
-// Created by 陈玉国 on 2023/2/13.
+// Created by 陈玉国 on 2023/3/10.
 // Copyright © 2015-2023 Sensors Data Co., Ltd. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,8 +22,8 @@
 #error This file must be compiled with ARC. Either turn on ARC for the project or use -fobjc-arc flag on this file.
 #endif
 
-#import "SAAppsFlyerShare.h"
-#import <AppsFlyerLib/AppsFlyerLib.h>
+#import "SAAdjustShare.h"
+#import <Adjust/Adjust.h>
 #import "SensorsThirdPartyConstant.h"
 
 #if __has_include(<SensorsAnalyticsSDK/SensorsAnalyticsSDK.h>)
@@ -32,36 +32,19 @@
 #import "SensorsAnalyticsSDK.h"
 #endif
 
-@interface SAAppsFlyerShare ()
-
-@property (nonatomic, copy) NSDictionary *customData;
-
-@end
-
-@implementation SAAppsFlyerShare
+@implementation SAAdjustShare
 
 - (void)shareData:(NSDictionary *)data {
     if (data && ![data isKindOfClass:[NSDictionary class]]) {
         return;
     }
-    NSDictionary *customData = AppsFlyerLib.shared.customData;
-    if (customData && ![customData isKindOfClass:[NSDictionary class]]) {
-        return;
-    }
-    NSMutableDictionary *tempCustomData = [NSMutableDictionary dictionary];
-    if (customData) {
-        [tempCustomData addEntriesFromDictionary:customData];
-    }
-    if (self.customData) {
-        [tempCustomData addEntriesFromDictionary:self.customData];
-    }
-    if (data) {
-        [tempCustomData addEntriesFromDictionary:data];
-    }
-    tempCustomData[kSAThirdPartyShareDataKeyDistinctId] = SensorsAnalyticsSDK.sharedInstance.distinctId;
-    tempCustomData[kSAThirdPartyShareDataKeyIsLogin] = (SensorsAnalyticsSDK.sharedInstance.loginId ? @YES : @NO);
-    self.customData = tempCustomData;
-    AppsFlyerLib.shared.customData = tempCustomData;
+    [data enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        if ([key isKindOfClass:[NSString class]] && [obj isKindOfClass:[NSString class]]) {
+            [Adjust addSessionCallbackParameter:key value:obj];
+        }
+    }];
+    [Adjust addSessionCallbackParameter:kSAThirdPartyShareDataKeyDistinctId value:SensorsAnalyticsSDK.sharedInstance.distinctId];
+    [Adjust addSessionCallbackParameter:kSAThirdPartyShareDataKeyIsLogin value:(SensorsAnalyticsSDK.sharedInstance.loginId ? @"true" : @"false")];
 }
 
 @end

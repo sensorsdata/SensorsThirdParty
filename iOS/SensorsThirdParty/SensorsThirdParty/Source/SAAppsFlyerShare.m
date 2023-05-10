@@ -24,13 +24,15 @@
 
 #import "SAAppsFlyerShare.h"
 #import <AppsFlyerLib/AppsFlyerLib.h>
-#import "SensorsThirdPartyConstant.h"
 
 #if __has_include(<SensorsAnalyticsSDK/SensorsAnalyticsSDK.h>)
 #import <SensorsAnalyticsSDK/SensorsAnalyticsSDK.h>
 #elif __has_include("SensorsAnalyticsSDK.h")
 #import "SensorsAnalyticsSDK.h"
 #endif
+
+static NSString *const kSAAppsFlyerCustomDataKeyDistinctId = @"sensors_distinct_id";
+static NSString *const kSAAppsFlyerCustomDataKeyIsLogin = @"sensors_is_login";
 
 @interface SAAppsFlyerShare ()
 
@@ -58,8 +60,8 @@
     if (data) {
         [tempCustomData addEntriesFromDictionary:data];
     }
-    tempCustomData[kSAThirdPartyShareDataKeyDistinctId] = SensorsAnalyticsSDK.sharedInstance.distinctId;
-    tempCustomData[kSAThirdPartyShareDataKeyIsLogin] = (SensorsAnalyticsSDK.sharedInstance.loginId ? @YES : @NO);
+    tempCustomData[kSAAppsFlyerCustomDataKeyDistinctId] = SensorsAnalyticsSDK.sharedInstance.distinctId;
+    tempCustomData[kSAAppsFlyerCustomDataKeyIsLogin] = (SensorsAnalyticsSDK.sharedInstance.loginId ? @YES : @NO);
     self.customData = tempCustomData;
     AppsFlyerLib.shared.customData = tempCustomData;
 }

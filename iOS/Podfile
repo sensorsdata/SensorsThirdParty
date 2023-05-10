@@ -9,6 +9,6 @@ target 'Example' do
 
   # Pods for Example
   
-  pod 'SensorsThirdParty/AppsFlyer', :path => '../'
+  pod 'SensorsThirdParty', :path => '../', :subspecs => ['Core', 'AppsFlyer', 'Adjust']
 
 end

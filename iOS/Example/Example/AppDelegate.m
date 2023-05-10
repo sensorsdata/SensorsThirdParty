@@ -10,6 +10,7 @@
 #import <SensorsAnalyticsSDK/SensorsAnalyticsSDK.h>
 #import <AppsFlyerLib/AppsFlyerLib.h>
 #import <AppTrackingTransparency/AppTrackingTransparency.h>
+#import <Adjust/Adjust.h>
 
 @interface AppDelegate ()
 
@@ -33,6 +34,12 @@
     //start Appsflyer SDK
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(didBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
     [AppsFlyerLib.shared waitForATTUserAuthorizationWithTimeoutInterval:10];
+
+    //Adjust sample
+    [SensorsThirdParty shareData:@{@"customKey": @"customValue"} toThirdParty:SAThirdPartyNameAdjust];
+    ADJConfig *config = [ADJConfig configWithAppToken:@"2fm9gkqubvpc" environment:ADJEnvironmentSandbox allowSuppressLogLevel:YES];
+    [config setLogLevel:ADJLogLevelVerbose];
+    [Adjust appDidLaunch:config];
     return YES;
 }
 

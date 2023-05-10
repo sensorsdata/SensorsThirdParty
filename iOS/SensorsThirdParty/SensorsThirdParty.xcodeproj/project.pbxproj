@@ -8,15 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		F229CF5429A35CB2001DECEB /* SensorsThirdParty.h in Headers */ = {isa = PBXBuildFile; fileRef = F229CF5229A35CB2001DECEB /* SensorsThirdParty.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F229CF5529A35CB2001DECEB /* SensorsThirdParty.m in Sources */ = {isa = PBXBuildFile; fileRef = F229CF5329A35CB2001DECEB /* SensorsThirdParty.m */; };
+		F22CE61C29BEFBC100ED23BC /* SensorsThirdPartyConstant.h in Headers */ = {isa = PBXBuildFile; fileRef = F22CE61A29BEFBC100ED23BC /* SensorsThirdPartyConstant.h */; };
+		F22CE61D29BEFBC100ED23BC /* SensorsThirdPartyConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = F22CE61B29BEFBC100ED23BC /* SensorsThirdPartyConstant.m */; };
+		F2915B2029BB230E00229482 /* SAAppsFlyerShare.h in Headers */ = {isa = PBXBuildFile; fileRef = F2915B1E29BB230E00229482 /* SAAppsFlyerShare.h */; };
+		F2915B2129BB230E00229482 /* SAAppsFlyerShare.m in Sources */ = {isa = PBXBuildFile; fileRef = F2915B1F29BB230E00229482 /* SAAppsFlyerShare.m */; };
+		F2915B2729BB231C00229482 /* SAThirdPartyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F2915B2329BB231C00229482 /* SAThirdPartyManager.m */; };
+		F2915B2829BB231C00229482 /* SAThirdPartyDataShare.h in Headers */ = {isa = PBXBuildFile; fileRef = F2915B2429BB231C00229482 /* SAThirdPartyDataShare.h */; };
+		F2915B2929BB231C00229482 /* SAThirdPartyManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F2915B2529BB231C00229482 /* SAThirdPartyManager.h */; };
+		F2915B2A29BB231C00229482 /* SensorsThirdParty.m in Sources */ = {isa = PBXBuildFile; fileRef = F2915B2629BB231C00229482 /* SensorsThirdParty.m */; };
+		F2915B2E29BB23C100229482 /* SAAdjustShare.h in Headers */ = {isa = PBXBuildFile; fileRef = F2915B2C29BB23C100229482 /* SAAdjustShare.h */; };
+		F2915B2F29BB23C100229482 /* SAAdjustShare.m in Sources */ = {isa = PBXBuildFile; fileRef = F2915B2D29BB23C100229482 /* SAAdjustShare.m */; };
+		F2915B3229BB294F00229482 /* SAThirdPartyShare.h in Headers */ = {isa = PBXBuildFile; fileRef = F2915B3029BB294F00229482 /* SAThirdPartyShare.h */; };
+		F2915B3329BB294F00229482 /* SAThirdPartyShare.m in Sources */ = {isa = PBXBuildFile; fileRef = F2915B3129BB294F00229482 /* SAThirdPartyShare.m */; };
 		F29BF93A299E173700CD7D2B /* SensorsThirdParty.docc in Sources */ = {isa = PBXBuildFile; fileRef = F29BF939299E173700CD7D2B /* SensorsThirdParty.docc */; };
 		F29BF940299E173700CD7D2B /* SensorsThirdParty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F29BF935299E173700CD7D2B /* SensorsThirdParty.framework */; };
 		F29BF945299E173700CD7D2B /* SensorsThirdPartyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F29BF944299E173700CD7D2B /* SensorsThirdPartyTests.m */; };
-		F29BF997299E1CD500CD7D2B /* SAAppsflyerShare.m in Sources */ = {isa = PBXBuildFile; fileRef = F29BF991299E1CD400CD7D2B /* SAAppsflyerShare.m */; };
-		F29BF998299E1CD500CD7D2B /* SAAppsflyerShare.h in Headers */ = {isa = PBXBuildFile; fileRef = F29BF992299E1CD400CD7D2B /* SAAppsflyerShare.h */; };
-		F29BF999299E1CD500CD7D2B /* SAThirdPartyDataShare.h in Headers */ = {isa = PBXBuildFile; fileRef = F29BF993299E1CD500CD7D2B /* SAThirdPartyDataShare.h */; };
-		F29BF99A299E1CD500CD7D2B /* SAThirdPartyManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F29BF994299E1CD500CD7D2B /* SAThirdPartyManager.h */; };
-		F29BF99B299E1CD500CD7D2B /* SAThirdPartyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F29BF995299E1CD500CD7D2B /* SAThirdPartyManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,16 +37,22 @@
 
 /* Begin PBXFileReference section */
 		F229CF5229A35CB2001DECEB /* SensorsThirdParty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SensorsThirdParty.h; path = Source/include/SensorsThirdParty.h; sourceTree = "<group>"; };
-		F229CF5329A35CB2001DECEB /* SensorsThirdParty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SensorsThirdParty.m; path = Source/SensorsThirdParty.m; sourceTree = "<group>"; };
+		F22CE61A29BEFBC100ED23BC /* SensorsThirdPartyConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SensorsThirdPartyConstant.h; sourceTree = "<group>"; };
+		F22CE61B29BEFBC100ED23BC /* SensorsThirdPartyConstant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SensorsThirdPartyConstant.m; sourceTree = "<group>"; };
+		F2915B1E29BB230E00229482 /* SAAppsFlyerShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAAppsFlyerShare.h; sourceTree = "<group>"; };
+		F2915B1F29BB230E00229482 /* SAAppsFlyerShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAAppsFlyerShare.m; sourceTree = "<group>"; };
+		F2915B2329BB231C00229482 /* SAThirdPartyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAThirdPartyManager.m; sourceTree = "<group>"; };
+		F2915B2429BB231C00229482 /* SAThirdPartyDataShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAThirdPartyDataShare.h; sourceTree = "<group>"; };
+		F2915B2529BB231C00229482 /* SAThirdPartyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAThirdPartyManager.h; sourceTree = "<group>"; };
+		F2915B2629BB231C00229482 /* SensorsThirdParty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorsThirdParty.m; sourceTree = "<group>"; };
+		F2915B2C29BB23C100229482 /* SAAdjustShare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAAdjustShare.h; sourceTree = "<group>"; };
+		F2915B2D29BB23C100229482 /* SAAdjustShare.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAAdjustShare.m; sourceTree = "<group>"; };
+		F2915B3029BB294F00229482 /* SAThirdPartyShare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAThirdPartyShare.h; sourceTree = "<group>"; };
+		F2915B3129BB294F00229482 /* SAThirdPartyShare.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAThirdPartyShare.m; sourceTree = "<group>"; };
 		F29BF935299E173700CD7D2B /* SensorsThirdParty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SensorsThirdParty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F29BF939299E173700CD7D2B /* SensorsThirdParty.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SensorsThirdParty.docc; sourceTree = "<group>"; };
 		F29BF93F299E173700CD7D2B /* SensorsThirdPartyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SensorsThirdPartyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F29BF944299E173700CD7D2B /* SensorsThirdPartyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SensorsThirdPartyTests.m; sourceTree = "<group>"; };
-		F29BF991299E1CD400CD7D2B /* SAAppsflyerShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAAppsflyerShare.m; path = Source/SAAppsflyerShare.m; sourceTree = "<group>"; };
-		F29BF992299E1CD400CD7D2B /* SAAppsflyerShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAAppsflyerShare.h; path = Source/SAAppsflyerShare.h; sourceTree = "<group>"; };
-		F29BF993299E1CD500CD7D2B /* SAThirdPartyDataShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAThirdPartyDataShare.h; path = Source/SAThirdPartyDataShare.h; sourceTree = "<group>"; };
-		F29BF994299E1CD500CD7D2B /* SAThirdPartyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAThirdPartyManager.h; path = Source/SAThirdPartyManager.h; sourceTree = "<group>"; };
-		F29BF995299E1CD500CD7D2B /* SAThirdPartyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAThirdPartyManager.m; path = Source/SAThirdPartyManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +74,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F2915B1D29BB230E00229482 /* AppsFlyer */ = {
+			isa = PBXGroup;
+			children = (
+				F2915B1E29BB230E00229482 /* SAAppsFlyerShare.h */,
+				F2915B1F29BB230E00229482 /* SAAppsFlyerShare.m */,
+			);
+			name = AppsFlyer;
+			path = Source/AppsFlyer;
+			sourceTree = "<group>";
+		};
+		F2915B2229BB231C00229482 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F2915B2429BB231C00229482 /* SAThirdPartyDataShare.h */,
+				F2915B3029BB294F00229482 /* SAThirdPartyShare.h */,
+				F2915B3129BB294F00229482 /* SAThirdPartyShare.m */,
+				F2915B2529BB231C00229482 /* SAThirdPartyManager.h */,
+				F2915B2329BB231C00229482 /* SAThirdPartyManager.m */,
+				F2915B2629BB231C00229482 /* SensorsThirdParty.m */,
+				F22CE61A29BEFBC100ED23BC /* SensorsThirdPartyConstant.h */,
+				F22CE61B29BEFBC100ED23BC /* SensorsThirdPartyConstant.m */,
+			);
+			name = Core;
+			path = Source/Core;
+			sourceTree = "<group>";
+		};
+		F2915B2B29BB232C00229482 /* Adjust */ = {
+			isa = PBXGroup;
+			children = (
+				F2915B2C29BB23C100229482 /* SAAdjustShare.h */,
+				F2915B2D29BB23C100229482 /* SAAdjustShare.m */,
+			);
+			name = Adjust;
+			path = SensorsThirdParty/Source/Adjust;
+			sourceTree = SOURCE_ROOT;
+		};
 		F29BF92B299E173700CD7D2B = {
 			isa = PBXGroup;
 			children = (
@@ -83,14 +131,11 @@
 		F29BF937299E173700CD7D2B /* SensorsThirdParty */ = {
 			isa = PBXGroup;
 			children = (
-				F29BF992299E1CD400CD7D2B /* SAAppsflyerShare.h */,
-				F29BF991299E1CD400CD7D2B /* SAAppsflyerShare.m */,
-				F29BF993299E1CD500CD7D2B /* SAThirdPartyDataShare.h */,
-				F29BF994299E1CD500CD7D2B /* SAThirdPartyManager.h */,
-				F29BF995299E1CD500CD7D2B /* SAThirdPartyManager.m */,
+				F2915B2229BB231C00229482 /* Core */,
+				F2915B2B29BB232C00229482 /* Adjust */,
+				F2915B1D29BB230E00229482 /* AppsFlyer */,
 				F29BF939299E173700CD7D2B /* SensorsThirdParty.docc */,
 				F229CF5229A35CB2001DECEB /* SensorsThirdParty.h */,
-				F229CF5329A35CB2001DECEB /* SensorsThirdParty.m */,
 			);
 			path = SensorsThirdParty;
 			sourceTree = "<group>";
@@ -111,9 +156,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F229CF5429A35CB2001DECEB /* SensorsThirdParty.h in Headers */,
-				F29BF99A299E1CD500CD7D2B /* SAThirdPartyManager.h in Headers */,
-				F29BF998299E1CD500CD7D2B /* SAAppsflyerShare.h in Headers */,
-				F29BF999299E1CD500CD7D2B /* SAThirdPartyDataShare.h in Headers */,
+				F2915B2029BB230E00229482 /* SAAppsFlyerShare.h in Headers */,
+				F2915B2829BB231C00229482 /* SAThirdPartyDataShare.h in Headers */,
+				F2915B3229BB294F00229482 /* SAThirdPartyShare.h in Headers */,
+				F2915B2E29BB23C100229482 /* SAAdjustShare.h in Headers */,
+				F2915B2929BB231C00229482 /* SAThirdPartyManager.h in Headers */,
+				F22CE61C29BEFBC100ED23BC /* SensorsThirdPartyConstant.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,9 +262,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F229CF5529A35CB2001DECEB /* SensorsThirdParty.m in Sources */,
-				F29BF997299E1CD500CD7D2B /* SAAppsflyerShare.m in Sources */,
-				F29BF99B299E1CD500CD7D2B /* SAThirdPartyManager.m in Sources */,
+				F2915B3329BB294F00229482 /* SAThirdPartyShare.m in Sources */,
+				F2915B2129BB230E00229482 /* SAAppsFlyerShare.m in Sources */,
+				F22CE61D29BEFBC100ED23BC /* SensorsThirdPartyConstant.m in Sources */,
+				F2915B2A29BB231C00229482 /* SensorsThirdParty.m in Sources */,
+				F2915B2729BB231C00229482 /* SAThirdPartyManager.m in Sources */,
+				F2915B2F29BB23C100229482 /* SAAdjustShare.m in Sources */,
 				F29BF93A299E173700CD7D2B /* SensorsThirdParty.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

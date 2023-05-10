@@ -18,7 +18,8 @@
 package com.sensorsdata.analytics.android.thirdparty.bean;
 
 public enum SAThirdPartyName {
-    APPSFLYER("AppsFlyer", "com.sensorsdata.analytics.android.thirdparty.impl.SAAppsFlyerImpl");
+    APPSFLYER("AppsFlyer", "com.sensorsdata.analytics.android.thirdparty.impl.SAAppsFlyerImpl"),
+    ADJUST("adjust", "com.sensorsdata.analytics.android.thirdparty.impl.SAAdjustImpl");
 
     private final String mName;
     private final String mClassName;

@@ -19,6 +19,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SAThirdPartyDataShare.h"
 #import "SensorsThirdParty.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -28,6 +29,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)defaultManager;
 
 - (void)shareData:(NSDictionary *)data toThirdParty:(SAThirdPartyName)thirdParty;
+
+@end
+
+@interface SAThirdPartyShare : NSObject <SAThirdPartyDataShare>
 
 @end
 

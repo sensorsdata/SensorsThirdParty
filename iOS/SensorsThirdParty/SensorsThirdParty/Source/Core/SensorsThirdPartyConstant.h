@@ -1,8 +1,8 @@
 //
-// SAThirdPartyManager.h
-// SensorsThirdParty SDK
+//  SensorsThirdPartyConstant.h
+//  SensorsThirdParty
 //
-// Created by 陈玉国 on 2023/2/13.
+//  Created by 陈玉国 on 2023/3/13.
 // Copyright © 2015-2023 Sensors Data Co., Ltd. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,16 +19,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SensorsThirdParty.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface SAThirdPartyManager : NSObject
-
-+ (instancetype)defaultManager;
-
-- (void)shareData:(NSDictionary *)data toThirdParty:(SAThirdPartyName)thirdParty;
-
-@end
-
-NS_ASSUME_NONNULL_END
+extern NSString *const kSAThirdPartyShareDataKeyDistinctId;
+extern NSString *const kSAThirdPartyShareDataKeyIsLogin;

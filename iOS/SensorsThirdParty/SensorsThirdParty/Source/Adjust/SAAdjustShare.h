@@ -1,8 +1,8 @@
 //
-// SAThirdPartyManager.h
+// SAAdjustShare.h
 // SensorsThirdParty SDK
 //
-// Created by 陈玉国 on 2023/2/13.
+// Created by 陈玉国 on 2023/3/10.
 // Copyright © 2015-2023 Sensors Data Co., Ltd. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,16 +18,11 @@
 // limitations under the License.
 //
 
-#import <Foundation/Foundation.h>
-#import "SensorsThirdParty.h"
+#import "SAThirdPartyShare.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SAThirdPartyManager : NSObject
-
-+ (instancetype)defaultManager;
-
-- (void)shareData:(NSDictionary *)data toThirdParty:(SAThirdPartyName)thirdParty;
+@interface SAAdjustShare : SAThirdPartyShare
 
 @end
 
