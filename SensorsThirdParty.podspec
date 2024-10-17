@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.license = { :type => 'Apache 2.0', :file => 'LICENSE' }
   s.source = { :git => 'https://github.com/sensorsdata/SensorsThirdParty.git', :tag => 'v' + s.version.to_s}
   s.author = 'Sensors Data'
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '12.0'
   s.frameworks = 'Foundation'
   s.dependency 'SensorsAnalyticsSDK'
   s.default_subspec = 'Core'
