@@ -10,7 +10,7 @@
 #import <SensorsAnalyticsSDK/SensorsAnalyticsSDK.h>
 #import <AppsFlyerLib/AppsFlyerLib.h>
 #import <AppTrackingTransparency/AppTrackingTransparency.h>
-#import <Adjust/Adjust.h>
+#import <AdjustSdk/AdjustSdk.h>
 
 @interface AppDelegate ()
 
@@ -37,9 +37,9 @@
 
     //Adjust sample
     [SensorsThirdParty shareData:@{@"customKey": @"customValue"} toThirdParty:SAThirdPartyNameAdjust];
-    ADJConfig *config = [ADJConfig configWithAppToken:@"2fm9gkqubvpc" environment:ADJEnvironmentSandbox allowSuppressLogLevel:YES];
+    ADJConfig *config = [[ADJConfig alloc] initWithAppToken:@"2fm9gkqubvpc" environment:ADJEnvironmentSandbox suppressLogLevel:YES];
     [config setLogLevel:ADJLogLevelVerbose];
-    [Adjust appDidLaunch:config];
+    [Adjust initSdk:config];
     return YES;
 }
 

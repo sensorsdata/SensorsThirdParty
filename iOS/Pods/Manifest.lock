@@ -1,0 +1,61 @@
+PODS:
+  - Adjust (5.0.1):
+    - Adjust/Adjust (= 5.0.1)
+  - Adjust/Adjust (5.0.1):
+    - AdjustSignature (~> 3.18)
+  - AdjustSignature (3.20.2)
+  - AppsFlyerFramework (6.15.3):
+    - AppsFlyerFramework/Main (= 6.15.3)
+  - AppsFlyerFramework/Main (6.15.3)
+  - SensorsAnalyticsSDK (4.8.2):
+    - SensorsAnalyticsSDK/Core (= 4.8.2)
+  - SensorsAnalyticsSDK/__Store (4.8.2)
+  - SensorsAnalyticsSDK/AutoTrack (4.8.2):
+    - SensorsAnalyticsSDK/Common
+  - SensorsAnalyticsSDK/Base (4.8.2):
+    - SensorsAnalyticsSDK/__Store
+  - SensorsAnalyticsSDK/Common (4.8.2):
+    - SensorsAnalyticsSDK/Base
+  - SensorsAnalyticsSDK/Core (4.8.2):
+    - SensorsAnalyticsSDK/Base
+    - SensorsAnalyticsSDK/Common
+    - SensorsAnalyticsSDK/Visualized
+  - SensorsAnalyticsSDK/Visualized (4.8.2):
+    - SensorsAnalyticsSDK/AutoTrack
+  - SensorsThirdParty/Adjust (0.0.2):
+    - Adjust (>= 5.0.0)
+    - SensorsAnalyticsSDK
+    - SensorsThirdParty/Core
+  - SensorsThirdParty/AppsFlyer (0.0.2):
+    - AppsFlyerFramework (>= 6.9.2)
+    - SensorsAnalyticsSDK
+    - SensorsThirdParty/Core
+  - SensorsThirdParty/Core (0.0.2):
+    - SensorsAnalyticsSDK
+
+DEPENDENCIES:
+  - SensorsThirdParty/Adjust (from `../`)
+  - SensorsThirdParty/AppsFlyer (from `../`)
+  - SensorsThirdParty/Core (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Adjust
+    - AdjustSignature
+    - AppsFlyerFramework
+    - SensorsAnalyticsSDK
+
+EXTERNAL SOURCES:
+  SensorsThirdParty:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Adjust: f27daaa40d0df5550b89dd428cd8545d812e1f6d
+  AdjustSignature: f42d8c64cda8361ff5b5a31e4536d82076be4306
+  AppsFlyerFramework: ad7ff0d22aa36c7f8cc4f71a5424e19b89ccb8ae
+  SensorsAnalyticsSDK: 768b3e0c45f185e2bd10d82ea9dbac8fc4d353b1
+  SensorsThirdParty: 1a17d4975527d926b7d3433ce458c46ac39c2474
+
+PODFILE CHECKSUM: e2c12c1c341cd2a2890d8af8e471446a10ecf36c
+
+COCOAPODS: 1.14.3

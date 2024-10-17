@@ -23,7 +23,7 @@
 #endif
 
 #import "SAAdjustShare.h"
-#import <Adjust/Adjust.h>
+#import <AdjustSdk/AdjustSdk.h>
 #import "SensorsThirdPartyConstant.h"
 
 #if __has_include(<SensorsAnalyticsSDK/SensorsAnalyticsSDK.h>)
@@ -40,11 +40,11 @@
     }
     [data enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         if ([key isKindOfClass:[NSString class]] && [obj isKindOfClass:[NSString class]]) {
-            [Adjust addSessionCallbackParameter:key value:obj];
+            [Adjust addGlobalCallbackParameter:obj forKey:key];
         }
     }];
-    [Adjust addSessionCallbackParameter:kSAThirdPartyShareDataKeyDistinctId value:SensorsAnalyticsSDK.sharedInstance.distinctId];
-    [Adjust addSessionCallbackParameter:kSAThirdPartyShareDataKeyIsLogin value:(SensorsAnalyticsSDK.sharedInstance.loginId ? @"true" : @"false")];
+    [Adjust addGlobalCallbackParameter:SensorsAnalyticsSDK.sharedInstance.distinctId forKey:kSAThirdPartyShareDataKeyDistinctId];
+    [Adjust addGlobalCallbackParameter:(SensorsAnalyticsSDK.sharedInstance.loginId ? @"true" : @"false") forKey:kSAThirdPartyShareDataKeyIsLogin];
 }
 
 @end
