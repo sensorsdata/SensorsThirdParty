@@ -17,10 +17,18 @@
 package com.sensorsdata.sdk.demo;
 
 import android.app.Application;
+import android.util.Log;
 
+import com.adjust.sdk.AdjustConfig;
+import com.adjust.sdk.LogLevel;
+import com.adjust.sdk.Util;
 import com.sensorsdata.analytics.android.sdk.SAConfigOptions;
 import com.sensorsdata.analytics.android.sdk.SensorsAnalyticsAutoTrackEventType;
 import com.sensorsdata.analytics.android.sdk.SensorsDataAPI;
+import com.sensorsdata.analytics.android.thirdparty.SensorsThirdParty;
+import com.sensorsdata.analytics.android.thirdparty.bean.SAThirdPartyName;
+
+import java.lang.reflect.Method;
 
 public class MyApplication extends Application {
     /**
@@ -32,6 +40,8 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         initSensorsDataAPI();
+        SensorsThirdParty.share(SAThirdPartyName.ADJUST, null);
+        initAdjust();
     }
 
     /**
@@ -48,5 +58,42 @@ public class MyApplication extends Application {
         configOptions.enableTrackAppCrash();
         //传入 SAConfigOptions 对象，初始化神策 SDK
         SensorsDataAPI.startWithConfigOptions(this, configOptions);
+    }
+
+    private void initAppFlys() {
+//        AppsFlyerLib.getInstance().init("<YOUR_DEV_KEY>", null, this);
+//        String additionalCustomData = AppsFlyerProperties.getInstance().getString("additionalCustomData");
+//        Map<String, Object> hashMap = new HashMap<String, Object>();
+//        AppsFlyerLib.getInstance().setAdditionalData(hashMap);
+    }
+
+    private void initAdjust() {
+        String appToken = "{YourAppToken}";
+        String environment = AdjustConfig.ENVIRONMENT_SANDBOX;
+        AdjustConfig config = new AdjustConfig(this, appToken, environment);
+        config.setLogLevel(LogLevel.VERBOSE);
+//        Adjust.initSdk(config);
+        Log.d("SA.Adjust", "version = " + Util.getSdkVersion());
+        Log.d("SA.Adjust", "version = " + getSDKVersion());
+        // 4.37.0 使用一下方式；
+//        Adjust.onCreate(config);
+//        Adjust.addSessionCallbackParameter("gloabkey","global_value");
+    }
+
+    public String getSDKVersion() {
+        try {
+            // 获取 Utils 类的 Class 对象
+            Class<?> utilsClass = Class.forName("com.adjust.sdk.Util");
+
+            // 获取 getSdkVersion 方法
+            Method getSdkVersionMethod = utilsClass.getDeclaredMethod("getSdkVersion");
+
+            // 调用方法并获取返回值
+            String sdkVersion = (String) getSdkVersionMethod.invoke(null); // 静态方法，第一个参数传 null
+            return sdkVersion;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 }

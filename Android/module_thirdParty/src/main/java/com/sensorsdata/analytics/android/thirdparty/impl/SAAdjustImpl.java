@@ -39,6 +39,10 @@ import java.util.Map;
  */
 public class SAAdjustImpl implements ISAThirdPartyShare {
     private boolean isSupport = true;
+    private String[] ADJUST_PARAMS = new String[]{
+            "addGlobalCallbackParameter",       // 5.0.0 以上版本
+            "addSessionCallbackParameter"       // 4.x 版本
+    };
 
     public SAAdjustImpl() {
         registerListener();
@@ -68,7 +72,11 @@ public class SAAdjustImpl implements ISAThirdPartyShare {
         SALog.d(TAG, "Adjust start addSessionCallbackParameter");
         try {
             Class<?> mAdjustClazz = Class.forName("com.adjust.sdk.Adjust");
-            Method addSessionCallbackParameterMethod = mAdjustClazz.getMethod("addSessionCallbackParameter", String.class, String.class);
+            Method addSessionCallbackParameterMethod = getParameterMethod(mAdjustClazz);
+            if (addSessionCallbackParameterMethod == null) {
+                SALog.d(TAG, "Adjust addCallbackParameter is null");
+                return;
+            }
             if (data != null && !data.isEmpty()) {
                 for (String key : data.keySet()) {
                     Object value = data.get(key);
@@ -80,11 +88,27 @@ public class SAAdjustImpl implements ISAThirdPartyShare {
             addSessionCallbackParameterMethod.invoke(mAdjustClazz, ThirdPartyConstants.KEY_DISTINCT_ID, SensorsDataAPI.sharedInstance().getDistinctId());
             addSessionCallbackParameterMethod.invoke(mAdjustClazz, ThirdPartyConstants.KEY_IS_LOGIN, Boolean.toString(!TextUtils.isEmpty(SensorsDataAPI.sharedInstance().getLoginId())));
             SALog.d(TAG, "Adjust start addSessionCallbackParameter succeed");
-        } catch (NoSuchMethodException| SecurityException | ClassNotFoundException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+        } catch (SecurityException | ClassNotFoundException |
+                 IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
             SALog.d(TAG, "Adjust reflection exception:" + e.getMessage());
             isSupport = false;
         } catch (Exception e) {
             SALog.d(TAG, "Adjust start addSessionCallbackParameter exception:" + e.getMessage());
         }
+    }
+
+    private Method getParameterMethod(Class<?> adjustClazz) {
+        for (String method : ADJUST_PARAMS) {
+            Method methodParam = null;
+            try {
+                methodParam = adjustClazz.getMethod(method, String.class, String.class);
+            } catch (Exception e) {
+                SALog.d(TAG, "Adjust addSessionCallbackParameter exception:" + e.getMessage());
+            }
+            if (methodParam != null) {
+                return methodParam;
+            }
+        }
+        return null;
     }
 }

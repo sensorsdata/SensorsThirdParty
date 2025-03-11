@@ -5,12 +5,12 @@ ext {
     ]
     versions = [
             // 三方接口模块版本号
-            thirdParty_version: "0.0.3"
+            thirdParty_version: "0.0.4"
     ]
 
     buildConfig = [
             compileSdkVersion: 33,
-            minSdkVersion    : 14,
+            minSdkVersion    : 21,
             targetSdkVersion : 33,
             sourceJavaVersion: JavaVersion.VERSION_1_7,
             targetJavaVersion: JavaVersion.VERSION_1_7,

@@ -40,6 +40,11 @@ dependencies {
     implementation rootProject.ext.androidx.constraintlayout
     implementation('com.sensorsdata.analytics.android:SensorsAnalyticsSDK:6.6.3')
     implementation 'com.appsflyer:af-android-sdk:6.9.4'
+//    implementation 'com.appsflyer:af-android-sdk:6.15.2'
+
+
     implementation "com.android.installreferrer:installreferrer:2.2"
     implementation project(":module_thirdParty")
+//    implementation 'com.adjust.sdk:adjust-android:5.0.1'
+    implementation 'com.adjust.sdk:adjust-android:4.37.0'
 }

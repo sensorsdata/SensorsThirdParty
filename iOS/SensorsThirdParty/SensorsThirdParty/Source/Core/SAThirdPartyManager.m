@@ -68,7 +68,7 @@ void sensors_third_party_dispatch_safe_sync(dispatch_queue_t queue,DISPATCH_NOES
 }
 
 - (void)shareData:(NSDictionary *)data toThirdParty:(SAThirdPartyName)thirdParty {
-    sensors_third_party_dispatch_safe_sync(self.serialQueue, ^{
+    dispatch_async(self.serialQueue, ^{
         [[self shareWithName:thirdParty] shareData:data];
     });
 }
@@ -122,7 +122,7 @@ void sensors_third_party_dispatch_safe_sync(dispatch_queue_t queue,DISPATCH_NOES
 }
 
 - (void)updateUser {
-    sensors_third_party_dispatch_safe_sync(self.serialQueue, ^{
+    dispatch_async(self.serialQueue, ^{
         for (SAThirdPartyShare *share in self.thirdPartyShares.allValues) {
             [share shareData:nil];
         }
